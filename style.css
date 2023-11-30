@@ -19,7 +19,21 @@
         opacity: 1;
         transform: translateY(0%);
     }
+}
 
+@keyframes blink {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+.blink {
+    animation: blink 0.7s alternate infinite;
 }
 
 * {
@@ -34,11 +48,11 @@ html,
 body {
     width: 100%;
     height: 100%;
-    background: url(bg.png) no-repeat;
-    /* background: black; */
+    background: url(background.png) no-repeat;
+    /* background: #2e2f2e; */
     background-size: cover;
     background-position: 100%, 0%;
-    box-shadow: 0px 0px 200px rgba(0, 0, 0) inset;
+    box-shadow: 0px 0px 300px rgba(0, 0, 0) inset;
 }
 
 nav {
@@ -49,6 +63,11 @@ nav {
     color: white;
     font-size: 22px;
     font-family: monospace;
+}
+
+.navitem.active {
+    text-decoration: underline 2pt solid white;
+
 }
 
 nav>h3 {
@@ -78,6 +97,7 @@ menu>a {
     text-align: center;
     text-decoration: none;
     color: white;
+    font-family: UD Digi Kyokasho N-B;
 }
 
 .container {
@@ -97,11 +117,10 @@ menu>a {
 
 footer {
     position: absolute;
-    width: 40%;
+    width: 100%;
     height: 10%;
     bottom: 5%;
-    right: 15%;
-    /* background-color: red; */
+    left: 0%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -111,6 +130,8 @@ footer div {
     display: flex;
     flex-direction: column;
     font-size: 25px;
+    align-items: center;
+    width: 100%;
 }
 
 #leftpart h1 {
@@ -129,6 +150,7 @@ footer div {
 #leftpart>h1 span {
     opacity: 0;
     position: relative;
+    padding: 0;
     left: -100%;
     animation: popin 1s ease-in-out forwards;
 }
@@ -192,19 +214,30 @@ footer div {
 
 #card {
     position: absolute;
-    top: 60%;
-    left: 50%;
-    padding: 15px;
+    top: 20%;
+    left: 0%;
+    padding: 5px;
     border-radius: 15px;
     background-color: #ffffff30;
-    transform: translateX(-50%);
-    width: 50%;
+    width: 30%;
     border: 1pt solid #ffffff20;
     backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    animation: fadein 2s 3s forwards;
 }
 
-#japan {
-    position: absolute;
-    bottom: 2%;
-    left: 2%;
+#card button {
+    font-size: 40px;
+    background-color: #00000050;
+    border: 1pt solid #ffffff90;
+    border-radius: 15px;
+    padding: 5px;
+    transition: 0.5s;
+}
+
+#card button:hover {
+    scale: 1.1;
+    cursor: pointer;
 }
