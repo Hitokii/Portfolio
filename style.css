@@ -3,6 +3,7 @@
         left: -100%;
         opacity: 0;
     }
+
     to {
         left: 0%;
         opacity: 1;
@@ -13,11 +14,12 @@
     from {
         transform: translateY(100%);
     }
+
     to {
         opacity: 1;
         transform: translateY(0%);
     }
-    
+
 }
 
 * {
@@ -28,18 +30,20 @@
     font-family: monospace;
 }
 
-html,body {
+html,
+body {
     width: 100%;
     height: 100%;
-    background: url(bg.jpg) no-repeat;
+    background: url(bg.png) no-repeat;
+    /* background: black; */
     background-size: cover;
-    background-position: 100%,0%;
-    box-shadow: 0px 0px 200px rgba(0,0,0) inset;
+    background-position: 100%, 0%;
+    box-shadow: 0px 0px 200px rgba(0, 0, 0) inset;
 }
 
 nav {
     position: relative;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     box-shadow: 50px 0px 50px black;
     height: 10%;
     color: white;
@@ -57,7 +61,7 @@ nav>h3 {
 nav>menu {
     position: absolute;
     right: 0%;
-    top:0%;
+    top: 0%;
     width: 50%;
     height: 100%;
     display: flex;
@@ -87,20 +91,31 @@ menu>a {
 
 .container#rightpart {
     left: 60%;
+    width: 35%;
 }
+
 
 footer {
     position: absolute;
-    width: 50%;
+    width: 40%;
     height: 10%;
-    bottom: 2.5%;
-    right: 5%;
+    bottom: 5%;
+    right: 15%;
     /* background-color: red; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
 }
 
 #leftpart h1 {
     font-size: 80px;
-    filter: drop-shadow(0px 0px 10px black); 
+    filter: drop-shadow(0px 0px 10px black);
 }
 
 #leftpart h2 {
@@ -108,7 +123,7 @@ footer {
     opacity: 0;
     font-family: monospace;
     font-size: 40px;
-    filter: drop-shadow(0px 0px 10px black); 
+    filter: drop-shadow(0px 0px 10px black);
 }
 
 #leftpart>h1 span {
@@ -118,7 +133,7 @@ footer {
     animation: popin 1s ease-in-out forwards;
 }
 
-#leftpart> *:not(h1,h2) {
+#leftpart>*:not(h1, h2) {
     opacity: 0;
     animation: fadein .5s 3s ease-in-out forwards;
     text-shadow: 0px 0px 4px black;
@@ -127,10 +142,11 @@ footer {
 #leftpart h3 {
     width: fit-content;
     font-size: 30px;
-    margin-top: 50px;    
+    margin-top: 50px;
     transition: .7s scale;
-    /* background: linear-gradient(-90deg, #00000050, transparent); */
-    filter: drop-shadow(0px 1px 2px black);
+    background: linear-gradient(-90deg, #00000050, transparent);
+    /* filter: drop-shadow(0px 1px 2px black); */
+    transform-origin: left;
 }
 
 
@@ -150,8 +166,45 @@ footer {
     margin-left: 20%;
     transition: 0.5s scale;
 }
+
 #leftpart button:hover {
     scale: 1.2;
     background-color: red;
     cursor: pointer;
+}
+
+#datecontainer {
+    height: 20%;
+}
+
+#hour {
+    font-size: 50px;
+}
+
+#date {
+    font-size: 32px;
+}
+
+#card h3 {
+    padding: 10px;
+    padding-left: 0;
+}
+
+#card {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #ffffff30;
+    transform: translateX(-50%);
+    width: 50%;
+    border: 1pt solid #ffffff20;
+    backdrop-filter: blur(5px);
+}
+
+#japan {
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
 }
